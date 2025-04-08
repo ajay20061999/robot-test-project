@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.6 on win32)" generated="2025-04-08T07:59:29.205048" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="C:\Users\User\IdeaProjects\RobotTestFramework\tests\login_test.robot">
+<kw name="Open Browser To Login Page" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-08T07:59:29.383076" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-08T07:59:29.382076" elapsed="4.332568"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-08T07:59:33.714644" elapsed="0.029962"/>
+</kw>
+<status status="PASS" start="2025-04-08T07:59:29.382076" elapsed="4.362530"/>
+</kw>
+<test id="s1-t1" name="Valid Login Test" line="9">
+<kw name="Login" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD_XPATH}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-08T07:59:33.745606" elapsed="0.420356"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-08T07:59:34.166961" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@placeholder='Username']'.</msg>
+<arg>${USERNAME_FIELD_XPATH}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T07:59:34.166961" elapsed="0.036373"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-08T07:59:34.203334" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@placeholder='Password']'.</msg>
+<arg>${PASSWORD_FIELD_XPATH}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T07:59:34.203334" elapsed="0.041641"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T07:59:34.244975" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON_XPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T07:59:34.244975" elapsed="0.030440"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${WELCOME_IMAGE_XPATH}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-08T07:59:34.275415" elapsed="1.720586"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-04-08T07:59:36.003253" level="INFO">Element 'xpath=//img[@alt='client brand banner']' is displayed.</msg>
+<arg>${WELCOME_IMAGE_XPATH}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-08T07:59:35.996001" elapsed="0.007252"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-04-08T07:59:33.745606" elapsed="2.257647"/>
+</kw>
+<kw name="Verify Login Success" owner="keywords">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-04-08T07:59:36.010255" level="INFO">Element 'xpath=//img[@alt='client brand banner']' is displayed.</msg>
+<arg>${WELCOME_IMAGE_XPATH}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-08T07:59:36.003253" elapsed="0.007002"/>
+</kw>
+<status status="PASS" start="2025-04-08T07:59:36.003253" elapsed="0.008001"/>
+</kw>
+<status status="PASS" start="2025-04-08T07:59:33.744606" elapsed="2.266648"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-08T07:59:36.011759" elapsed="2.094021"/>
+</kw>
+<status status="PASS" start="2025-04-08T07:59:29.206048" elapsed="8.899732"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Test" id="s1" pass="1" fail="0" skip="0">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
